@@ -9,7 +9,14 @@ import { useState } from "react";
 const Page = () => {
 
   const [sidebarOpened, setSidebarOpened] = useState(false)
-  const [chatActive, setChatActive] = useState<Chat>()
+  const [chatActive, setChatActive] = useState<Chat>({
+    id: '123',
+    title: 'bla blu',
+    messages: [
+      {id: '99', author: 'me', body: "Opa tudo bem?"},
+      {id: '100', author: 'ai', body: "Tudo ótimo, em que posso te ajudar?"}
+    ]
+  })
 
   const openSidebar = () => setSidebarOpened(true)
   const closeSidebar = () => setSidebarOpened(false)
