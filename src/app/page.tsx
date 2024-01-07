@@ -1,6 +1,7 @@
 "use client"
 
 import { ChatArea } from "@/components/ChatArea";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { Chat } from "@/types/Chat";
@@ -18,6 +19,8 @@ const Page = () => {
     ]
   })
 
+  const [AiLoading, setAiLoading] = useState(false);
+
   const openSidebar = () => setSidebarOpened(true)
   const closeSidebar = () => setSidebarOpened(false)
 
@@ -26,6 +29,10 @@ const Page = () => {
   }
 
   const handleNewChat = () => {
+
+  }
+
+  const handleSendMessage = () => {
 
   }
 
@@ -40,10 +47,12 @@ const Page = () => {
       <section className="flex flex-col w-full">
 
         <Header openSidebarClick={openSidebar}  
-        title={`Bla Bla Bla`}
+        title={"Bla Bla Bla"}
         newChatClick={handleNewChat}/>
 
         <ChatArea chat={chatActive} />
+
+        <Footer disabled={AiLoading} onSendMessage={handleSendMessage} />
 
       </section>
     </main>

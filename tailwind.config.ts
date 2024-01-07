@@ -15,7 +15,7 @@ const config: Config = {
       },
       colors: {
         'gpt-grey': '#343541',
-        'gpt-light-grey': '#40414f'
+        'gpt-ligthgray': '#40414f'
       }
     },
   },
