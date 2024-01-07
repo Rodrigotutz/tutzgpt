@@ -1,6 +1,6 @@
 # TutzGPT com React
 
-[Acessar o App](https://chatgpt-clone-rodrigotutz.vercel.app/)
+[Acessar o App](https://tutzgpt.vercel.app/)
 
 Instalar Dependências
 ```bash
