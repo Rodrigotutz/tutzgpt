@@ -38,7 +38,7 @@ export const ChatMessageInput = ({ disabled, onSend}: Props) => {
         bg-gpt-ligthgray p-2 rounded-md ${disabled && 'opacity-50'}`}>
 
             <textarea ref={textEl} className="flex-1 border-0 bg-transparent resize-none 
-            outline-none h-7 max-h-48 overflow-auto" placeholder="Digite uma mensagem"
+            outline-none h-7 max-h-48 overflow-auto z-0" placeholder="Digite uma mensagem"
             value={text} onChange={e => setText(e.target.value)} 
             onKeyUp={handleTextKeyUp} disabled={disabled}></textarea>
 

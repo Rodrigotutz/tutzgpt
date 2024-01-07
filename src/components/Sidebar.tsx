@@ -15,7 +15,7 @@ type Props = {
 export const Sidebar = ({ open, onClose, onClear, onNewChat, children}: Props) => {
 
     return (
-        <section className={`fixed left-0 top-0 bottom-0 text-white 
+        <section className={`z-50 fixed left-0 top-0 bottom-0 text-white 
         ${ open ? 'w-screen bg-gray-600/75' : 'w-0'} md:w-64 md:static`}>
 
             <div className={`transition-all duration-200 flex h-screen 
