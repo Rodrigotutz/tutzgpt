@@ -34,7 +34,7 @@ export const ChatMessageInput = ({ disabled, onSend}: Props) => {
     }
 
     return (
-        <div className={`flex items-center border border-gray-800/50 
+        <div className={`flex border border-gray-800/50 
         bg-gpt-ligthgray p-2 rounded-md ${disabled && 'opacity-50'}`}>
 
             <textarea ref={textEl} className="flex-1 border-0 bg-transparent resize-none 
@@ -42,7 +42,8 @@ export const ChatMessageInput = ({ disabled, onSend}: Props) => {
             value={text} onChange={e => setText(e.target.value)} 
             onKeyUp={handleTextKeyUp} disabled={disabled}></textarea>
 
-            <div onClick={handleSendMessage} className="">
+            <div onClick={handleSendMessage} className={`self-end p-1 cursor-pointer
+            rounded ${text.length ? 'opacity:100 hover:bg-black/20' : 'opacity-20'}`}>
                 <IconSend width={14} height={14} />
             </div>
         </div>
