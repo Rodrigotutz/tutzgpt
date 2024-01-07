@@ -44,7 +44,7 @@ const Page = () => {
         ...
       </Sidebar>
 
-      <section className="flex flex-col w-full">
+      <section className="flex vh flex-col w-full">
 
         <Header openSidebarClick={openSidebar}  
         title={"Bla Bla Bla"}
