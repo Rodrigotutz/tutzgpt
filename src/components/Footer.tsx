@@ -8,7 +8,7 @@ type Props = {
 export const Footer = ({disabled, onSendMessage }: Props)  => {
 
     return (
-        <footer className="w-full border-t border-t-gray-600 p-2">
+        <footer className="border-t border-t-gray-600 p-2">
             <div className="max-w-4xl m-auto">
                 <ChatMessageInput
                 disabled={disabled}
