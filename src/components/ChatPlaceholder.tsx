@@ -3,11 +3,11 @@ import IconSunTwentyFour from "./icons/IconSunTwentyFour"
 export const ChatPlaceholder = () => {
     return (
         <div className="m-5">
-            <h3 className="text-4xl font-bold text-center my-8">TutzGPT</h3>
+            <h3 className="text-4xl text-white font-bold text-center my-8">TutzGPT</h3>
 
             <div className="flex flex-col md:flex-row gap-5 m-auto mb-8 md:max-w-4xl">
                 <div>
-                    <div className="flex justify-center items-center text-lg mb-3">
+                    <div className="text-white flex justify-center items-center text-lg mb-3">
                         <IconSunTwentyFour width={24} height={24} className="mr-3" />
                         Exemplo
                     </div>
