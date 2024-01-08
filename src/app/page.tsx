@@ -4,6 +4,7 @@ import { ChatArea } from "@/components/ChatArea";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
+import { SidebarChatButton } from "@/components/SidebarChatButton";
 import { Chat } from "@/types/Chat";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4} from 'uuid'
@@ -35,7 +36,7 @@ const Page = () => {
         chatListClone[chatIndex].messages.push({
           id: uuidv4(),
           author: 'ai',
-          body: 'Aqui vai a resposta da AI'
+          body: 'Aqui vai a resposta da AI :)'
         })
       }
       setChatList(chatListClone)
@@ -84,18 +85,38 @@ const Page = () => {
     setAiLoading(true)
   }
 
+  const handleSelectChat = () => {
+
+  }
+
+  const handleDeleteChat = () => {
+
+  }
+
+  const handleEditChat = () => {
+
+  }
+
   return (
     <main className="flex min-h-screen bg-gpt-grey">
       <Sidebar open={sidebarOpened} onClose={closeSidebar} 
       onClear={handleClearConversations}
       onNewChat={handleNewChat}>
-        ...
+        {chatList.map(item => {
+          <SidebarChatButton key={item.id} 
+          chatItem={item}
+          active={item.id === chatActiveId} 
+          onClick={handleSelectChat}
+          onDelete={handleDeleteChat}
+          onEdit={handleEditChat}
+          />
+        })}
       </Sidebar>
 
       <section className="flex flex-col w-full dvh">
 
         <Header openSidebarClick={openSidebar}  
-        title={"Bla Bla Bla"}
+        title={chatActive ? chatActive.title : 'Nova Conversa'}
         newChatClick={handleNewChat}/>
 
         <ChatArea chat={chatActive}  loading={AiLoading}/>
