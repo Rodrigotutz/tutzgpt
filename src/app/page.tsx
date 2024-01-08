@@ -102,15 +102,7 @@ const Page = () => {
       <Sidebar open={sidebarOpened} onClose={closeSidebar} 
       onClear={handleClearConversations}
       onNewChat={handleNewChat}>
-        {chatList.map(item => {
-          <SidebarChatButton key={item.id} 
-          chatItem={item}
-          active={item.id === chatActiveId} 
-          onClick={handleSelectChat}
-          onDelete={handleDeleteChat}
-          onEdit={handleEditChat}
-          />
-        })}
+        ...
       </Sidebar>
 
       <section className="flex flex-col w-full dvh">
