@@ -85,16 +85,28 @@ const Page = () => {
     setAiLoading(true)
   }
 
-  const handleSelectChat = () => {
+  const handleSelectChat = (id: string) => {
+    if(AiLoading) return
 
+    let item = chatList.find(item => item.id === id)
+    if(item) setChatActiveId(item.id)
   }
 
-  const handleDeleteChat = () => {
-
+  const handleDeleteChat = (id: string) => {
+    let chatListClone = [...chatList]
+    let chatIndex = chatListClone.findIndex(item => item.id === id)
+    chatListClone.splice(chatIndex, 1)
+    setChatList(chatListClone)
+    setChatActiveId('')
   }
 
-  const handleEditChat = () => {
-
+  const handleEditChat = (id: string, newTitle: string) => {
+    if(newTitle) {
+      let chatListClone = [...chatList]
+      let chatIndex = chatListClone.findIndex(item => item.id === id)
+      chatListClone[chatIndex].title = newTitle
+      setChatList(chatListClone)
+    }
   }
 
   return (
@@ -102,7 +114,12 @@ const Page = () => {
       <Sidebar open={sidebarOpened} onClose={closeSidebar} 
       onClear={handleClearConversations}
       onNewChat={handleNewChat}>
-        ...
+        {chatList.map(item => (
+
+          <SidebarChatButton key={item.id} chatItem={item} active={item.id === chatActiveId}
+          onClick={handleSelectChat} onDelete={handleDeleteChat} onEdit={handleEditChat}/>
+
+        )) }
       </Sidebar>
 
       <section className="flex flex-col w-full dvh">
