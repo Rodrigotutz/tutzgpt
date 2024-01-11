@@ -49,7 +49,8 @@ const Page = () => {
           id: uuidv4(),
           author: 'ai',
           body: 'Infelizmente no momento não consigo te responder, tente novamente mais tarde :('
-      })
+        })
+      }
       
     }
     setChatList(chatListClone)
