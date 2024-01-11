@@ -13,6 +13,9 @@
     "openai": "^3",
     "react": "^18",
     "react-dom": "^18",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-gfm": "^4.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

@@ -1,12 +1,19 @@
 import { ChatMessage } from "@/types/ChatMessage"
 import IconUser from "./icons/IconUser"
 import IconRobot from "./icons/IconRobot"
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from "remark-gfm"
+import { Prism as SyntaxHighLighter } from 'react-syntax-highlighter' 
+import {nightOwl} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 type Props = {
     item: ChatMessage
 }
 
 export const ChatMessageItem = ({item}: Props) => {
+
+    const response = item.body
+
     return (
         <div className={`py-5 ${item.author === 'ai' && 'bg-gray-600/50'}`}>
             <div className="max-w-4xl m-auto flex">
@@ -17,7 +24,28 @@ export const ChatMessageItem = ({item}: Props) => {
                 </div>
 
                 <div className="flex-1 text-base whitespace-pre-wrap">
-                    {item.body}
+                    <ReactMarkdown children={response} remarkPlugins={remarkGfm} 
+                    components={{
+                        code(props) {
+                          const {children, className, node, ...rest} = props
+                          const match = /language-(\w+)/.exec(className || '')
+                          return match ? (
+                            <SyntaxHighLighter
+                              {...rest}
+                              PreTag="div"
+                              children={String(children).replace(/\n$/, '')}
+                              language={match[1]}
+                              style={nightOwl}
+                            />
+                          ) : (
+                            <code {...rest} className={className}>
+                              {children}
+                            </code>
+                          )
+                        }
+                      }}
+                        
+                    />
                 </div>
             </div>
         </div>
