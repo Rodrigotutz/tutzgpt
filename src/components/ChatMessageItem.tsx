@@ -22,7 +22,7 @@ export const ChatMessageItem = ({item}: Props) => {
                     {item.author === 'ai' && <IconRobot width={24}  height={24}/>}
                 </div>
 
-                <div className=" text-base whitespace-pre-wrap w-9/12">
+                <div className="text-white text-base whitespace-pre-wrap w-9/12">
                     <ReactMarkdown children={response}  
                     components={{
                         code(props) {
