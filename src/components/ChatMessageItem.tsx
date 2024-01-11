@@ -30,14 +30,13 @@ export const ChatMessageItem = ({item}: Props) => {
                           const match = /language-(\w+)/.exec(className || '')
                           return match ? (
                             <SyntaxHighLighter
-                              {...rest}
                               PreTag="div"
                               children={String(children).replace(/\n$/, '')}
                               language={match[1]}
                               style={darcula}
                             />
                           ) : (
-                            <code {...rest} className={className}>
+                            <code className={className}>
                               {children}
                             </code>
                           )
