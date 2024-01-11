@@ -44,7 +44,12 @@ const Page = () => {
           author: 'ai',
           body: response
         })
-      }
+      } else {
+        chatListClone[chatIndex].messages.push({
+          id: uuidv4(),
+          author: 'ai',
+          body: 'Infelizmente no momento não consigo te responder, tente novamente mais tarde :('
+      })
       
     }
     setChatList(chatListClone)
