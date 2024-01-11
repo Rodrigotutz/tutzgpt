@@ -14,7 +14,7 @@ export const Header = ({openSidebarClick, title, newChatClick}: Props) => {
             <div onClick={openSidebarClick}>
                 <IconMenu width={24} height={24} />
             </div>
-            <div className="mx-2 trucate">
+            <div className="mx-2 truncate">
                 {title}
             </div>
             <div onClick={newChatClick}>
