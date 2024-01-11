@@ -7,7 +7,6 @@ import { Sidebar } from "@/components/Sidebar";
 import { SidebarChatButton } from "@/components/SidebarChatButton";
 import { Chat } from "@/types/Chat";
 import { openai } from "@/utils/openai";
-import matter from "gray-matter";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4} from 'uuid'
 
