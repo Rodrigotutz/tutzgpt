@@ -4,7 +4,7 @@ import IconRobot from "./icons/IconRobot"
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from "remark-gfm"
 import { Prism as SyntaxHighLighter } from 'react-syntax-highlighter' 
-import {nightOwl} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 type Props = {
     item: ChatMessage
