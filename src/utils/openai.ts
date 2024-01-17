@@ -14,7 +14,7 @@ export const openai = {
         try{
             const response = await api.createChatCompletion({
                 model: 'gpt-4',
-                temperature: 2,
+                temperature: 1,
                 messages
             })
             
