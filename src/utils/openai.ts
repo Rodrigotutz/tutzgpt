@@ -13,8 +13,8 @@ export const openai = {
     generate: async (messages: ChatCompletionRequestMessage[]) => {
         try{
             const response = await api.createChatCompletion({
-                model: 'gpt-4.0-turbo',
-                temperature: 1,
+                model: 'gpt-4',
+                temperature: 2,
                 messages
             })
             
